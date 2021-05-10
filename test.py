@@ -33,10 +33,11 @@
 ## [1,4,3,3,4]
 
 generalReject=7
-particularRejects=[1,7,7,4,3,3,4]
+particularRejects = [1,4,3,3,4] ##Esta lista se actualizara
 ##generalReject=5
 ##particularRejects=[1,2,5,4,1,1]
 originalLenght = len(particularRejects)
+particularRejects2 = [1,4,3,3,4] ##Esta lista es respaldo IMPORTANTE
 print("El monto es ", generalReject)
 print("La lista es ", particularRejects)
 print("El Resultado de montos y posiciones es: ")
@@ -57,6 +58,7 @@ def select(reject,rejectsList,accum):
         result.append(rejectsList[0])
         positions.append(originalLenght-lenght)
         print(result,positions)
+        print("este es el reject2222222", particularRejects2)
         rejectsList.pop(0)
         return select(reject,rejectsList,accum)
     elif len(rejectsList)>0 and accum + rejectsList[0] > reject:
@@ -65,6 +67,28 @@ def select(reject,rejectsList,accum):
         return select(reject,rejectsList,accum)
     elif len(rejectsList) == 0:
         print("Ya valio madres")
+        lastamount = result[-1]
+        lastposition = positions[-1]
+        print(result)
+        print(type(lastposition),lastposition)
+        
+        print("acum viejo   ", accum)
+        accum -= lastamount
+        print("acum nuevo   ", accum)
+        
+        result.pop()
+        positions.pop()
+        print(result, positions)
+
+        print(particularRejects2)
+        print(originalLenght)
+        
+        rejectsList = particularRejects2[lastposition+1:originalLenght]
+        print(rejectsList)
+        return select(reject,rejectsList,accum)
+        
+        
+
       
 x = select(generalReject,particularRejects,0)
 print(x)
