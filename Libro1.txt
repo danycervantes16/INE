@@ -1,0 +1,5 @@
+# rechazos 	Monto rechazado	Monto individual
+3	15000	5000
+4	12000	300
+5	20000	1200
+6	30000	1500
