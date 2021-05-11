@@ -1,7 +1,7 @@
 import csv
-exampleFile = open( import csv)
-exampleReader = csv.reader 
-exampleDafa- lis( exampleReader)
+exampleFile = open( "import.csv")
+exampleReader = csv.reader(exampleFile)
+exampleData = list(exampleReader)
 exampleData
 
 
