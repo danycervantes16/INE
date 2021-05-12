@@ -86,9 +86,6 @@ def select(reject,rejectsList,accum):
         rejectsList = particularRejects2[lastposition+1:originalLenght]
         print(rejectsList)
         return select(reject,rejectsList,accum)
-        
-        
-
       
 x = select(generalReject,particularRejects,0)
 print(x)
