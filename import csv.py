@@ -23,8 +23,8 @@ for i in range(1, len(rechIndData)):
     #print(rechIndData[i][3],type(rechIndData[i][3]))
 #print(type(rechIndData))
 
-#for i in range(1, len(rechGralData)):
-for i in range(3,4):
+for i in range(1, len(rechGralData)):
+##for i in range(2,4):
 ##for i in range(1,2):
     junta = rechGralData[i][0]
     nomina = rechGralData[i][1]
@@ -41,10 +41,10 @@ for i in range(3,4):
     ###Integrando la funcion selectorFunction
     print(arrayRechInd)
     arrayRejects = arrayRechInd
-    backupRejects = arrayRechInd
+    backupRejects = arrayRechInd[:]
     originalLenght = len(backupRejects)
-##    result=[]
-##    positions=[]
+    ##result=[]
+    ##positions=[]
     laMamalona = joa.select(junta,nomina,banco,rechazo,arrayRejects,0,originalLenght,backupRejects)
 ##  print(laMamalona)
     
