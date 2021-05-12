@@ -45,7 +45,7 @@ for i in range(1, len(rechGralData)):
     originalLenght = len(backupRejects)
     ##result=[]
     ##positions=[]
-    laMamalona = joa.select(junta,nomina,banco,rechazo,arrayRejects,0,originalLenght,backupRejects)
+    laMamalona = joa.select(junta,nomina,banco,rechazo,arrayRejects,0,originalLenght,backupRejects,[],[])
 ##  print(laMamalona)
     
 

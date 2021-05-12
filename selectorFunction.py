@@ -7,10 +7,10 @@
 ##IMPORTANTE: Fue necesario crear un respaldo de la lista de vectores 
 ##  porque el tamano cambia conforme la recursividad (aun no entiendo porque si se hizo una reasignacion de variables)
 
-result=[]
-positions=[]
+##result=[]
+##positions=[]
 
-def select(jle, typeNomina, bank, reject,rejectsList,accum,originalLenght, backupRejectsList):
+def select(jle, typeNomina, bank, reject,rejectsList,accum,originalLenght, backupRejectsList,result,positions):
     ##print("El monto es ", reject)
     ##print("El acumulado es ",accum)
     ##print("Porque pitos no es la suma ", round((accum + rejectsList[0]),2))
@@ -42,12 +42,12 @@ def select(jle, typeNomina, bank, reject,rejectsList,accum,originalLenght, backu
         ##print("Sume ", rejectsList[0])
         ##print("backup funcion", backupRejectsList)
         rejectsList.pop(0)
-        return select(jle, typeNomina, bank,reject,rejectsList,accum,originalLenght, backupRejectsList)
+        return select(jle, typeNomina, bank,reject,rejectsList,accum,originalLenght, backupRejectsList,result,positions)
     elif len(rejectsList)>0 and accum + rejectsList[0] > reject:
         ##print("Quite del rejectsList ",rejectsList, rejectsList[0] )
         rejectsList.pop(0)
         #print(result,positions)
-        return select(jle, typeNomina, bank,reject,rejectsList,accum,originalLenght, backupRejectsList)
+        return select(jle, typeNomina, bank,reject,rejectsList,accum,originalLenght, backupRejectsList,result,positions)
     #Esta seccion realiza retroceso del vector cuando no cumple con el monto general
     elif len(rejectsList) == 0:
         ##print("ATENCION",len(result))
@@ -71,7 +71,7 @@ def select(jle, typeNomina, bank, reject,rejectsList,accum,originalLenght, backu
         
         rejectsList = backupRejectsList[lastposition+1:originalLenght]
         ##print("cuando quite ",rejectsList)
-        return select(jle, typeNomina, bank, reject, rejectsList, accum, originalLenght, backupRejectsList)
+        return select(jle, typeNomina, bank, reject, rejectsList, accum, originalLenght, backupRejectsList,result,positions)
 
 ##x = select(generalReject,particularRejects,0)
 ##print(x)
