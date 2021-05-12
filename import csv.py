@@ -23,14 +23,15 @@ for i in range(1, len(rechIndData)):
     #print(rechIndData[i][3],type(rechIndData[i][3]))
 #print(type(rechIndData))
 
-for i in range(1, len(rechGralData)):
+#for i in range(1, len(rechGralData)):
+for i in range(3,4):
+##for i in range(1,2):
     junta = rechGralData[i][0]
     nomina = rechGralData[i][1]
     banco = rechGralData[i][2]
     rechazo = rechGralData[i][3]
     arrayRechInd = []
-##    for j in range(1, len(rechIndData)):
-    for j in range(1):
+    for j in range(1, len(rechIndData)):
         juntaInd = rechIndData[j][0]
         nominaInd = rechIndData[j][1]
         bancoInd = rechIndData[j][2]
@@ -38,6 +39,7 @@ for i in range(1, len(rechGralData)):
         if juntaInd == junta and nominaInd == nomina and bancoInd == banco:
             arrayRechInd.append(rechazoInd)
     ###Integrando la funcion selectorFunction
+    print(arrayRechInd)
     arrayRejects = arrayRechInd
     backupRejects = arrayRechInd
     originalLenght = len(backupRejects)
