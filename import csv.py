@@ -1,4 +1,7 @@
 import csv
+import pandas as pd
+import numpy as np
+
 import selectorFunction as joa
 
 rechGral = open( "C:\danydev\INE\RechGral.csv")
@@ -23,6 +26,8 @@ for i in range(1, len(rechIndData)):
     #print(rechIndData[i][3],type(rechIndData[i][3]))
 #print(type(rechIndData))
 
+
+resultados = []
 for i in range(1, len(rechGralData)):
 ##for i in range(2,4):
 ##for i in range(1,2):
@@ -38,14 +43,30 @@ for i in range(1, len(rechGralData)):
         rechazoInd = rechIndData[j][3]
         if juntaInd == junta and nominaInd == nomina and bancoInd == banco:
             arrayRechInd.append(rechazoInd)
-    ###Integrando la funcion selectorFunction
-    print(arrayRechInd)
+    ##Integrando la funcion selectorFunction
+    ##print(arrayRechInd)
     arrayRejects = arrayRechInd
     backupRejects = arrayRechInd[:]
     originalLenght = len(backupRejects)
     ##result=[]
     ##positions=[]
-    laMamalona = joa.select(junta,nomina,banco,rechazo,arrayRejects,0,originalLenght,backupRejects,[],[])
-##  print(laMamalona)
+    finalArray = joa.select(junta,nomina,banco,rechazo,arrayRejects,0,originalLenght,backupRejects,[],[])
+    lenghtFinalArray = len(finalArray)
+    for k in range(lenghtFinalArray):
+        resultados.append([junta,nomina,banco,finalArray[k]])
+
+##convertir a numpy array
+npFinal=np.array(resultados)
+
+# convert array into dataframe
+dataFinal = pd.DataFrame(npFinal)
+  
+# save the dataframe as a csv file
+dataFinal.to_csv("resultado.csv")
+
+
+
+
+    
     
 
