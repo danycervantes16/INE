@@ -28,6 +28,7 @@ def select(jle, typeNomina, bank, reject,rejectsList,accum,originalLenght, backu
         print("El monto es ", reject)
         print("El Resultado de montos es: ")
         print(result)
+        print(" ")
         ##print("La lista es ", particularRejects)
         ##print("El Resultado de montos y posiciones es: ")
         return result
@@ -43,11 +44,13 @@ def select(jle, typeNomina, bank, reject,rejectsList,accum,originalLenght, backu
         ##print("backup funcion", backupRejectsList)
         rejectsList.pop(0)
         return select(jle, typeNomina, bank,reject,rejectsList,accum,originalLenght, backupRejectsList,result,positions)
+
     elif len(rejectsList)>0 and accum + rejectsList[0] > reject:
         ##print("Quite del rejectsList ",rejectsList, rejectsList[0] )
         rejectsList.pop(0)
         #print(result,positions)
         return select(jle, typeNomina, bank,reject,rejectsList,accum,originalLenght, backupRejectsList,result,positions)
+
     #Esta seccion realiza retroceso del vector cuando no cumple con el monto general
     elif len(rejectsList) == 0:
         ##print("ATENCION",len(result))

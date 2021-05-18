@@ -55,10 +55,10 @@ for i in range(1, len(rechGralData)):
     for k in range(lenghtFinalArray):
         resultados.append([junta,nomina,banco,finalArray[k]])
 
-##convertir a numpy array
+## convertir a numpy array
 npFinal=np.array(resultados)
 
-# convert array into dataframe
+## convert array into dataframe
 dataFinal = pd.DataFrame(npFinal)
   
 # save the dataframe as a csv file
