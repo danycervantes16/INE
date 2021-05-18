@@ -11,6 +11,9 @@ rechGralData
 
 for i in range(1, len(rechGralData)):
     #print(rechGralData[i][3],type(rechGralData[i][3]))
+    rechGralData[i][0]=(rechGralData[i][0]).strip()
+    rechGralData[i][1]=(rechGralData[i][1]).strip()
+    rechGralData[i][2]=(rechGralData[i][2]).strip()
     rechGralData[i][3]=float(rechGralData[i][3])
     #print(rechGralData[i][3],type(rechGralData[i][3]))
 
@@ -22,6 +25,9 @@ rechIndData
 
 for i in range(1, len(rechIndData)):
     #print(rechIndData[i][3],type(rechIndData[i][3]))
+    rechIndData[i][0]=(rechIndData[i][0]).strip()
+    rechIndData[i][1]=(rechIndData[i][1]).strip()
+    rechIndData[i][2]=(rechIndData[i][2]).strip()
     rechIndData[i][3]=float(rechIndData[i][3])
     #print(rechIndData[i][3],type(rechIndData[i][3]))
 #print(type(rechIndData))
